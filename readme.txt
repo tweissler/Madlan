@@ -1,3 +1,37 @@
+Run instructions:
+To create a new state machine you need to create a new class the extends StateMachine, then initialize your machine with new.
+Each machine needs to have its starting state initialized using setStartState(<State>).
+You can add accept state by using addAcceptState(<State>).
+
+Example:
+Class myMachine extends StateMachine {
+...
+}
+
+StateMachine A = new myMachine();
+State b = new myState("b");
+A.setStartState(b);
+A.setAcceptState(b);
+
+Do the same as above for states and events, extending State and Event accordingly.
+Each State and Event have to have a name.
+After creating your states, you must add them to the machine.
+Example:
+State b = new myState("b");
+A.addNewState(b);
+
+In order to create a transition from one state to another based on an Event, you use addTransition. 
+Example:
+State b = new myState("b");
+State c = new myState("c");
+Event ev_1 = new myEvent("ev_1");
+b.addTransition(ev_1, c);
+
+This means that if you are currently on state b and you recieve Event ev_1 you transition to state c.
+
+
+
+
 Assumptions:
 For each machine there is one start state and as many accept states as you want. There could be zero accept states.
 Everytime you reach an accept state, there is a print to standard output that says so.
