@@ -1,7 +1,7 @@
 Run instructions:
-To create a new state machine you need to create a new class the extends StateMachine, then initialize your machine with new.
+To create a new state machine you need to create a new class that extends StateMachine, then initialize your machine with new.
 Each machine needs to have its starting state initialized using setStartState(<State>).
-You can add accept state by using addAcceptState(<State>).
+You can add accept states by using addAcceptState(<State>).
 
 Example:
 Class myMachine extends StateMachine {
@@ -14,7 +14,7 @@ A.setStartState(b);
 A.setAcceptState(b);
 
 Do the same as above for states and events, extending State and Event accordingly.
-Each State and Event have to have a name.
+Each State and Event have to have a name. Two states can't have the same name.
 After creating your states, you must add them to the machine.
 Example:
 State b = new myState("b");
